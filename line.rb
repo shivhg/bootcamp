@@ -1,4 +1,8 @@
 class Line
+  private
+  attr_reader :start, :end
+
+  public
   def initialize(point_one, point_two)
     @start = point_one
     @end = point_two
@@ -15,6 +19,9 @@ class Line
   end
 
   def ==(different_line)
-    true
+    ( @start == different_line.send(:start) &&
+      @end == different_line.send(:end) ) ||
+    ( @start == different_line.send(:end) &&
+        @end == different_line.send(:start) )
   end
 end
