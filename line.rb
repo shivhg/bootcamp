@@ -5,6 +5,12 @@ class Line
   end
 
   def length
-    0
+    x_difference = @start.x - @end.x
+    y_difference = @start.y - @end.y
+
+    x_difference_square = x_difference * x_difference
+    y_difference_square = y_difference * y_difference
+
+    Math.sqrt(x_difference_square + y_difference_square)
   end
 end
