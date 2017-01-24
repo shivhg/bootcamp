@@ -27,30 +27,32 @@ describe Line do
   end
 
   describe '#equals' do
-    it 'is true when both the end points are same' do
-      p1 = Point.new(5, 6)
-      p2 = Point.new(10, 12)
-      line1 = Line.new(p1, p2)
-      line2 = Line.new(p1, p2)
-      expect(line1).to eq(line2)
-    end
+    context 'is true' do
+      it 'if both the end points are same' do
+        p1 = Point.new(5, 6)
+        p2 = Point.new(10, 12)
+        line1 = Line.new(p1, p2)
+        line2 = Line.new(p1, p2)
+        expect(line1).to eq(line2)
+      end
 
-    it 'is true when both the end points have same coordinate' do
-      p1 = Point.new(5, 6)
-      p_one = Point.new(5, 6)
-      p2 = Point.new(10, 12)
-      p_two = Point.new(10, 12)
-      line1 = Line.new(p1, p2)
-      line2 = Line.new(p_one, p_two)
-      expect(line1).to eq(line2)
-    end
+      it 'if both the end points have same coordinate' do
+        p1 = Point.new(5, 6)
+        p_one = Point.new(5, 6)
+        p2 = Point.new(10, 12)
+        p_two = Point.new(10, 12)
+        line1 = Line.new(p1, p2)
+        line2 = Line.new(p_one, p_two)
+        expect(line1).to eq(line2)
+      end
 
-    it 'is also true when both the end points are interchanged' do
-      p1 = Point.new(5, 6)
-      p2 = Point.new(10, 12)
-      line1 = Line.new(p1, p2)
-      line2 = Line.new(p2, p1)
-      expect(line1).to eq(line2)
+      it 'if both the end points are interchanged' do
+        p1 = Point.new(5, 6)
+        p2 = Point.new(10, 12)
+        line1 = Line.new(p1, p2)
+        line2 = Line.new(p2, p1)
+        expect(line1).to eq(line2)
+      end
     end
 
     it 'is false when atleast one end point is different' do
